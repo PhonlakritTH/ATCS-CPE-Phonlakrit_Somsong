@@ -1,5 +1,5 @@
 # 📖 ATCS-CPE-Phonlakrit_Somsong
-This repository is for send homework Lab from Advanced Topics in Computer Software
+This repository is for send homework Lab from Advanced Topics in Computer Software. This single repository is used to collect all lab assignments (LAB) and the Final Project throughout the entire course.
 
 # 💻 Lab Contents
 - LAB01: LLM Foundations
