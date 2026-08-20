@@ -46,13 +46,13 @@ def main():
     rag = RAGPipeline()
     #rag.show_settings()
 
-    print("\nHi Bro! 😎\nAsk me anything")
+    print("\nHello !! \nAsk me anything")
 
     while True:
         question = input("\nQ: ").strip()
 
         if question in ("exit", "quit", "q"):
-            print("ขอบใจหลายๆ เด้อ !!!")
+            print("Thanks !!!")
             break
 
         if not question:

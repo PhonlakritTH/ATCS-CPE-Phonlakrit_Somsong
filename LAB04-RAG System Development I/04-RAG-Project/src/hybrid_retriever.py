@@ -1,13 +1,3 @@
-
-
-
-# Combine BM25 keyword search and dense retrieval using Reciprocal Rank Fusion (RRF).
-# Hybrid retrieval improves both keyword matching and semantic search.
-# Supports optional reranking for higher retrieval accuracy.
-# Enable or disable features in config.py.
-
-
-
 import os
 import pickle
 import re

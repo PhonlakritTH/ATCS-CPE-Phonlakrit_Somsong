@@ -1,10 +1,3 @@
-# LAB 7: Combine query embedding, FAISS search, and answer retrieval into one pipeline.
-# Test multiple queries and save the results to outputs/retrieval_results.json.
-# Run: python labs/lab07_complete_retrieval.py
-
-
-
-
 import json
 import os
 import sys

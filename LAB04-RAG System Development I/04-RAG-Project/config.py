@@ -32,7 +32,7 @@ VECTOR_DB_DIR = os.path.join(BASE_DIR, "vector_db")
 
 
 # clack python build_index.py
-SOURCE_FILE = os.path.join(DATA_DIR, "sex_q_a.txt")
+SOURCE_FILE = os.path.join(DATA_DIR, "privacy.txt")
 GOLDEN_SET_FILE = os.path.join(DATA_DIR, "golden_set.json")
 
 # ผลลัพธ์ระหว่างทางจาก build_index.py

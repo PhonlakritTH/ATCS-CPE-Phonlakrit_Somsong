@@ -21,7 +21,7 @@ def main():
     assert len(embeddings) == len(chunks), "Vector Number and chunk Number must be equal"
 
     store = VectorStore()
-    store.build_index(embeddings)
+    store.build(embeddings)               # หรือ store.build_index(embeddings)
     store.save(config.FAISS_INDEX_FILE)
 
     save_chunk_store(chunks, config.CHUNK_STORE_FILE)

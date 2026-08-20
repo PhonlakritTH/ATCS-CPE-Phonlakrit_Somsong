@@ -1,11 +1,3 @@
-
-
-
-# document_loader.py
-# Load data/sex_q_a.txt and convert it into a list of Q&A records.
-# Each record includes the source line number for reference.
-
-
 import os
 
 

@@ -1,13 +1,4 @@
-
-
-# Store and search embedding vectors using FAISS.
-# IndexFlatIP uses inner product to compare normalized vectors.
-# With normalized embeddings, inner product is equal to cosine similarity.
-# Higher scores indicate more similar vectors.
-
-
 import json
-
 import faiss
 import numpy as np
 
@@ -25,6 +16,10 @@ class VectorStore:
         self.index.add(embeddings)
         return self
 
+    def build_index(self, embeddings):
+        """Alias สำหรับการสร้าง index"""
+        return self.build(embeddings)
+
     def save(self, path):
         faiss.write_index(self.index, path)
         print(f"[vector_store] บันทึก index ที่ {path}")
@@ -34,18 +29,14 @@ class VectorStore:
         return self
 
     def search(self, query_vector, top_k):
-# Find the top_k vectors most similar to the query vector.
-# Returns a list of (index, score) pairs sorted by similarity.
-# The index maps directly to the corresponding chunk in chunk_store.
-
-
         # FAISS รับข้อมูลเป็น 2 มิติเสมอ จึงต้องครอบ [ ] ให้กลายเป็น 1 แถว
         query_vector = np.asarray([query_vector], dtype="float32")
         scores, positions = self.index.search(query_vector, top_k)
 
+        # รวมค่า position และ score เข้าด้วยกันแล้วค่อยคืนค่ากลับไปทีเดียว
         results = []
         for position, score in zip(positions[0], scores[0]):
-            if position != -1:      # -1 = FAISS หาไม่เจอ (เกิดเมื่อ index เล็กกว่า top_k)
+            if position != -1:      # -1 = FAISS หาไม่เจอ
                 results.append((int(position), float(score)))
         return results
 
