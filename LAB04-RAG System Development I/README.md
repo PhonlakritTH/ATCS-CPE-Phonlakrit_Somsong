@@ -10,7 +10,7 @@ Build a complete RAG system in Python, from loading a knowledge base and splitti
 RAG-Project/
 │
 ├── data/
-│   ├── sex_q_a.txt
+│   ├── privacy.txt			    # Dataset 
 │   └── golden_set.json                     # Evaluation set
 │
 ├── outputs/
