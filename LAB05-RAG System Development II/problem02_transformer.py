@@ -13,8 +13,8 @@ def with_position(text):
 
 
 def find_pair(data):
-    formal = next(d for d in data if d["lang"] == "ทางการ" and "ถุงยาง" in d["question"])
-    slang = next(d for d in data if d["lang"] == "แสลง" and "ถุงยาง" in d["question"])
+    formal = next(d for d in data if d["lang"] == "ทางการ" and "VPN" in d["question"])
+    slang = next(d for d in data if d["lang"] == "แสลง" and "VPN" in d["question"])
     return formal, slang
 
 
@@ -28,12 +28,10 @@ def run():
     print("BoW (slang) :", bow(slang["question"]))
     common = set(bow(formal["question"])) & set(bow(slang["question"]))
     print("Exact-token overlap:", common or "None")
-    print("-> Both questions are about the same topic (a problem with a condom during use)")
+    print("-> Both questions are about the same topic (what a VPN does and whether it's needed)")
     print("   but Keyword/BoW barely overlaps because the wording differs (Vocabulary Mismatch)")
 
     print("\nExample: effect of Token order on meaning (Position):")
-    # Use the answer instead of the question, since the question is too short
-    # (not enough whitespace-separated tokens to show the effect of reordering)
     a = " ".join(formal["answer"].split()[:8])
     b = " ".join(reversed(a.split()))
     print("A (original):", with_position(a))

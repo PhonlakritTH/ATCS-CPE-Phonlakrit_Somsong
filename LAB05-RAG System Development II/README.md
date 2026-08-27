@@ -1,6 +1,6 @@
-# DL-05-RAG System Development II
+# LAB05-RAG System Development II
 
-This project demonstrates 9 common problems in LLM and RAG (Retrieval-Augmented Generation) systems. All simulations use the same real dataset, privacy.txt, which is a Thai sexual health question-answer knowledge base. This allows each problem to be tested with real data instead of isolated sample data.
+This project demonstrates 9 common problems in LLM and RAG (Retrieval-Augmented Generation) systems. All simulations use the same real dataset, privacy.txt, which is a Thai question-answer knowledge base about online privacy and personal data protection (account security, phishing/malware threats, privacy-protection technology, PDPA law, and social media/digital-footprint safety). This allows each problem to be tested with real data instead of isolated sample data.
 
 # Structure:
 
@@ -21,9 +21,9 @@ RAG-Project/
 ```
 
 # Dataset:
-The project uses one shared Knowledge Base containing Thai questions and answers about sexual health, consent, anatomy, and related laws.
+The project uses one shared Knowledge Base containing Thai questions and answers about online privacy and personal data protection: authentication and account security basics, online scam/threat techniques (phishing, ransomware, spyware), privacy-protection technology, PDPA law and data-subject rights, and social media/digital-footprint safety.
 
-The dataset contains 391 entries, covering 6 main categories and 3 language styles: formal, casual, and slang.
+The dataset contains 56 entries, covering 5 main categories and 3 language styles: formal (ทางการ), casual (กันเอง), and slang (แสลง).
 
 Each entry has three lines:
 ```text
@@ -50,10 +50,5 @@ A: <answer>
 | 8 | RAG Configuration | Configuration controls which RAG components are active. |
 | 9 | Evaluation | Measure chunking and retrieval with numerical metrics. |
 
-All ten simulations use the same real Knowledge Base through `data_loader.py`. 
+All nine simulations use the same real Knowledge Base through `data_loader.py`. 
 This allows different LLM and RAG problems to be tested using the same dataset and pipeline.
-
-
-
-
-

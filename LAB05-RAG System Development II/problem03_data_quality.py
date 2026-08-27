@@ -1,7 +1,6 @@
 import re
 from data_loader import load_qa
 
-
 def make_noisy_samples(data, n=2):
     base = [d["question"] for d in data[:n]]
     raw = []
@@ -19,7 +18,6 @@ def normalize(text):
     text = re.sub(r"[_@!\-]+", " ", text)
     text = re.sub(r"\s+", " ", text)
     return text.strip()
-
 
 def run():
     data = load_qa()

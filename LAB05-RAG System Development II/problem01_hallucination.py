@@ -13,7 +13,7 @@ def retrieve(question, top_k=3):
 
 def bad_generate(question, context):
     if not context:
-        return "กินยาคุมพร้อมน้ำอัดลมช่วยให้ฤทธิ์คุมกำเนิดแรงขึ้น (ข้อมูลนี้ไม่มีอยู่จริงใน Knowledge Base)"
+        return "ถ้าข้อมูลไม่สำคัญ ถือว่าไม่อันตรายเพราะไม่มีใครเอา (ข้อมูลนี้ไม่มีอยู่จริงใน Knowledge Base)"
     return context[0]["answer"]
 
 
@@ -24,8 +24,8 @@ def grounded_generate(question, context):
 
 
 def run():
-    q_in_kb = "PrEP คืออะไร"
-    q_out_of_kb = "ตั๋วเครื่องบินไปเชียงใหม่ราคาเท่าไหร่"
+    q_in_kb = "PDPA คืออะไร"
+    q_out_of_kb = "ข้าวมันไก่ราคาเท่าไร"
 
     for label, q in [("Out of KB scope", q_out_of_kb), ("In KB", q_in_kb)]:
         ctx = retrieve(q)

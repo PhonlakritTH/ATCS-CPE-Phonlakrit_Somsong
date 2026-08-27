@@ -7,7 +7,6 @@ _HEADER_RE = re.compile(r"\[หมวด:\s*(.+?)\]")
 
 
 def load_qa(path=DATA_PATH):
-    # Returns a list of dict: id, category, lang, question, answer, text
     with open(path, encoding="utf-8") as f:
         raw = f.read()
 
@@ -48,11 +47,9 @@ def load_qa(path=DATA_PATH):
         })
     return entries
 
-
 def categories(entries=None):
     entries = entries if entries is not None else load_qa()
     return sorted(set(e["category"] for e in entries))
-
 
 if __name__ == "__main__":
     data = load_qa()

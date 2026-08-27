@@ -1,6 +1,6 @@
 from data_loader import load_qa
 
-QUERY = "ถุงยาง หลุด ทำไง"
+QUERY = "VPN ปลอดภัยขึ้นจริงเหรอ"
 
 
 def score(query, text):

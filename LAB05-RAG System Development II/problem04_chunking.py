@@ -1,6 +1,6 @@
 from data_loader import load_qa
 
-CATEGORY = "สุขภาพทางเพศและการป้องกัน"
+CATEGORY = "ความรู้พื้นฐานและการยืนยันตัวตน"
 
 
 def chunk(words, size, overlap=0):

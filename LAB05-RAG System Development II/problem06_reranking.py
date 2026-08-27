@@ -1,7 +1,7 @@
 from data_loader import load_qa
 
-GENERIC_TERMS = ["เอชไอวี", "ตรวจ"]
-SPECIFIC_TERMS = ["ฟักตัว", "window"]
+GENERIC_TERMS = ["ข้อมูล", "ป้องกัน"]
+SPECIFIC_TERMS = ["OTP", "Password Manager"]
 
 
 def first_stage(doc):
@@ -22,11 +22,11 @@ def run():
     first = sorted(data, key=first_stage, reverse=True)[:6]
     second = sorted(first, key=rerank, reverse=True)
 
-    print("Before Re-ranking (Top 6 from First-stage: generic terms 'เอชไอวี','ตรวจ'):")
+    print("Before Re-ranking (Top 6 from First-stage: generic terms 'ข้อมูล','ป้องกัน'):")
     for d in first:
         print(f"  score={first_stage(d)} | {d['question']}")
 
-    print("\nAfter Re-ranking (extra weight for specific terms, e.g. 'ระยะฟักตัว'):")
+    print("\nAfter Re-ranking (extra weight for specific terms, e.g. 'OTP'):")
     for d in second:
         print(f"  score={rerank(d)} | {d['question']}")
 

@@ -18,7 +18,6 @@ from problem06_reranking import run as problem06
 from problem07_generation import run as problem07
 from problem08_config import run as problem08
 from problem09_evaluation import run as problem09
-from problem10_debug_scripts import run as problem10
 
 PROBLEMS = {
     1: ("Hallucination / Context", problem01),
@@ -30,12 +29,11 @@ PROBLEMS = {
     7: ("Retrieval Correct, Generation Wrong", problem07),
     8: ("RAG Configuration", problem08),
     9: ("Chunk & Retrieval Evaluation", problem09),
-    10: ("Debug RAG Scripts", problem10),
 }
 
 def show_menu():
     print("*" * 65)
-    print("       LLM & RAG — 10 Problem-Based Simulations")
+    print("       LLM & RAG — 9 Problem-Based Simulations")
     print("*" * 65)
     print(" 0. Run All")
     for no, (name, _) in PROBLEMS.items():
@@ -52,7 +50,7 @@ def execute(number):
         return
 
     if number not in PROBLEMS:
-        print("Please choose a number 0-10")
+        print("Please choose a number 0-9")
         return
 
     name, func = PROBLEMS[number]
@@ -64,7 +62,7 @@ def execute(number):
 def main_loop():
     while True:
         show_menu()
-        choice = input("Select a problem to simulate [0-10] or Q to exit: ").strip()
+        choice = input("Select a problem to simulate [0-9] or Q to exit: ").strip()
 
         if choice.upper() == "Q":
             print("Exiting the program")
@@ -73,11 +71,11 @@ def main_loop():
         try:
             number = int(choice)
         except ValueError:
-            print("Please enter a number 0-10 or Q\n")
+            print("Please enter a number 0-9 or Q\n")
             continue
 
         if number < 0 or (number not in PROBLEMS and number != 0):
-            print("Please choose a number 0-10\n")
+            print("Please choose a number 0-9\n")
             continue
 
         execute(number)
@@ -91,6 +89,6 @@ if __name__ == "__main__":
         try:
             execute(int(arg))
         except ValueError:
-            print("Please enter a number 0-10 or Q")
+            print("Please enter a number 0-9 or Q")
     else:
         main_loop()
