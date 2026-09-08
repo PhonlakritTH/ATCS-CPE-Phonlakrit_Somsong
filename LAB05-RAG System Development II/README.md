@@ -36,22 +36,6 @@ Q: <question>
 A: <answer>
 
 ```
-# Summary:
-
-| # | Problem | Main Idea |
-|---|---------|-----------|
-| 1 | Hallucination | The LLM answers without supporting context. |
-| 2 | Vocabulary Mismatch / Position | BoW cannot handle different wording or word order well. |
-| 3 | Data Quality | Duplicate and noisy data reduce data quality. |
-| 4 | Chunking | Poor chunk size or overlap can lose context. |
-| 5 | Metadata Filtering | Similar content may have the wrong metadata. |
-| 6 | Re-ranking | First-stage retrieval may rank the best document too low. |
-| 7 | Faithfulness | Retrieval is correct, but generation changes important information. |
-| 8 | RAG Configuration | Configuration controls which RAG components are active. |
-| 9 | Evaluation | Measure chunking and retrieval with numerical metrics. |
-
-All nine simulations use the same real Knowledge Base through `data_loader.py`. 
-This allows different LLM and RAG problems to be tested using the same dataset and pipeline.
 
 ---
 
@@ -235,7 +219,7 @@ privacy.txt --(data_loader.load_qa)--> Q&A entries (category, lang, question, an
 
 ---
 
-## สรุปภาพรวม
+## Summary
 
 | ขั้นตอน | ปัญหาหลักที่พบ | สาเหตุ | แนวทางแก้ไขหลัก |
 |---|---|---|---|
