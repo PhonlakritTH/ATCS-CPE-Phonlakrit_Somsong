@@ -12,7 +12,6 @@ def make_noisy_samples(data, n=2):
     raw.append("")                                            # empty row from a broken scrape
     return raw
 
-
 def normalize(text):
     text = text.lower()
     text = re.sub(r"[_@!\-]+", " ", text)
